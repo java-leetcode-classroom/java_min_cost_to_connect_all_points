@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="SolutionTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-06-23T09:04:37" hostname="yuanyu-ubuntu" time="0.031">
+  <properties/>
+  <testcase name="minCostConnectPointsExample1()" classname="SolutionTest" time="0.029"/>
+  <testcase name="minCostConnectPointsExample2()" classname="SolutionTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
