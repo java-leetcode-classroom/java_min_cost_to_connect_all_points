@@ -62,6 +62,7 @@ Output: 18
 ![](https://i.imgur.com/4We2uLd.png)
 
 ## 程式碼
+
 ```java
 import java.util.*;
 
@@ -75,6 +76,7 @@ public class Solution {
       this.Point = Point;
     }
   }
+
   public int minCostConnectPoints(int[][] points) {
     int cost = 0;
     int pointsNum = points.length;
@@ -85,9 +87,9 @@ public class Solution {
     HashMap<Integer, List<AdjacencyNode>> adjacencyMap = new HashMap<>();
     for (int i = 0; i < pointsNum; i++) {
       int[] point1 = points[i];
-      for (int j = i+1; j < pointsNum; j++) {
+      for (int j = i + 1; j < pointsNum; j++) {
         int[] point2 = points[j];
-        int dist = Math.abs(point1[0]-point2[0]) + Math.abs(point1[1]-point2[1]);
+        int dist = Math.abs(point1[0] - point2[0]) + Math.abs(point1[1] - point2[1]);
         if (!adjacencyMap.containsKey(i)) {
           adjacencyMap.put(i, new ArrayList<>());
         }
@@ -100,10 +102,10 @@ public class Solution {
     }
 
     HashSet<Integer> visit = new HashSet<>();
-    PriorityQueue<AdjacencyNode> queue = new PriorityQueue<>((a,b) -> a.Cost - b.Cost);
-    queue.add(new AdjacencyNode(0,0));
+    PriorityQueue<AdjacencyNode> queue = new PriorityQueue<>(Comparator.comparingInt(a -> a.Cost));
+    queue.add(new AdjacencyNode(0, 0));
     // Step 2: Prim's algorithm
-    while(visit.size() < pointsNum) {
+    while (visit.size() < pointsNum) {
       AdjacencyNode node = queue.poll();
       if (node != null) {
         if (visit.contains(node.Point)) {

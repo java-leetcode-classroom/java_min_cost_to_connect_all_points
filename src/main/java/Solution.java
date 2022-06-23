@@ -35,7 +35,7 @@ public class Solution {
     }
 
     HashSet<Integer> visit = new HashSet<>();
-    PriorityQueue<AdjacencyNode> queue = new PriorityQueue<>((a,b) -> a.Cost - b.Cost);
+    PriorityQueue<AdjacencyNode> queue = new PriorityQueue<>(Comparator.comparingInt(a -> a.Cost));
     queue.add(new AdjacencyNode(0,0));
     // Step 2: Prim's algorithm
     while(visit.size() < pointsNum) {
